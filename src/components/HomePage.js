@@ -17,7 +17,7 @@ const HomePage = React.createClass({
                     <Sidebar ward={this.state.data.selectedArea}/>
                 </div>
                 <div className="small-10 grid-block">
-                    <Mapbox />
+                    <Mapbox ward={this.state.data.selectedArea}/>
                 </div>
             </div>
         </div>

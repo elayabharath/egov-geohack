@@ -1,8 +1,32 @@
 import React, { PropTypes } from 'react'
 import jayanagar from './../static/jayanagar-data.js'
+import shivajinagar from './../static/shivajinagar-data.js'
 import _ from 'lodash'
 
 const Mapbox = React.createClass({
+
+    getInitialState() {
+        return {
+            data: jayanagar
+        }
+    },
+
+    componentWillReceiveProps(nextProps) {
+        switch (nextProps.ward) {
+            case 'JAYANAGAR':
+                this.setState({
+                    data: jayanagar
+                })
+                break;
+            case 'SHIVAJINAGAR':
+                this.setState({
+                    data: shivajinagar
+                })
+                break;
+            default:
+
+        }
+    },
 
     mapData(id, coords) {
         return {
@@ -28,8 +52,7 @@ const Mapbox = React.createClass({
         }
     },
 
-    componentDidMount: function() {
-
+    renderMap() {
         const self = this;
 
         mapboxgl.accessToken = 'pk.eyJ1IjoiZWxheWFiaGFyYXRoIiwiYSI6ImNqMTRra3JubDAwMDYzM25uOXEwNDF3ZzIifQ.ntzLwhDXekJpMtyMpygz7g';
@@ -44,7 +67,7 @@ const Mapbox = React.createClass({
 
             var features = [];
 
-            _.forEach(jayanagar, (item, index) => {
+            _.forEach(self.state.data, (item, index) => {
                 _.forEach(item, (building, key) => {
                     features.push({
                         type: "Feature",
@@ -110,9 +133,17 @@ const Mapbox = React.createClass({
         });
     },
 
+    componentDidMount: function() {
+        this.renderMap();
+    },
+
+    componentDidUpdate(prevProps, prevState) {
+        this.renderMap();
+    },
+
 
     render () {
-        return <div id='map'></div>
+        return <div id='map' key={this.props.ward}></div>
     }
 })
 

@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react'
 import UserStore from './../stores/UserStore'
 
 import jayanagar from './../static/jayanagar-data.js'
+import shivajinagar from './../static/shivajinagar-data.js'
 
 const Sidebar = React.createClass({
 
@@ -29,7 +30,7 @@ const Sidebar = React.createClass({
         var data = jayanagar;
         switch (ward) {
             case 'SHIVAJINAGAR':
-                // data = shiva
+                data = shivajinagar;
                 break;
             default:
 
