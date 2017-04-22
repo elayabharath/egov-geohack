@@ -1,7 +1,7 @@
 import React from 'react'
 import Reflux from 'reflux'
-
-import {Grid, Button} from 'react-bootstrap'
+import Sidebar from './Sidebar'
+import Mapbox from './Mapbox'
 import UserStore from './../stores/UserStore'
 
 const HomePage = React.createClass({
@@ -11,8 +11,15 @@ const HomePage = React.createClass({
     ],
 
     render () {
-        return <div>
-            Homepage
+        return <div className="grid-frame">
+            <div className="grid-block">
+                <div className="small-2 grid-block vertical">
+                    <Sidebar />
+                </div>
+                <div className="small-10 grid-block">
+                    <Mapbox />
+                </div>
+            </div>
         </div>
     }
 })

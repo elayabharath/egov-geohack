@@ -7,3 +7,20 @@ html, body {
     max-width: 100%;
     overflow-x: hidden;
 }
+
+table {
+    width: 100%;
+    td {
+        padding: 12px 0;
+    }
+}
+
+label {
+    padding-bottom: 12px;
+}
+
+.sidepanel {
+    padding: 12px;
+}
+
+#map { position:absolute; top:0; bottom:0; width:100%; }
