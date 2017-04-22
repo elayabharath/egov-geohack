@@ -5,12 +5,17 @@ const UserStore = Reflux.createStore({
 
     init: function() {
         this.data = {
-
+            selectedArea: "JAYANAGAR"
         };
     },
 
     getInitialState() {
         return this.data;
+    },
+
+    setSelectedArea(area) {
+        this.data.selectedArea = area;
+        this.trigger(this.data);
     },
 
     getUser() {

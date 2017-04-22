@@ -49,7 +49,20 @@ const Mapbox = React.createClass({
                     features.push({
                         type: "Feature",
                         properties: {
-                            description: "Hello"
+                            description: `
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td style="padding: 0 12px 0 0;">Plinth area (sqm)</td>
+                                            <td><strong>${building.area.toFixed(2)}</strong></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding: 0 12px 0 0;">Height (m)</td>
+                                            <td><input type="number" value="${building.height || 0}" /></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            `
                         },
                         geometry: {
                             type: "Polygon",

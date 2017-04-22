@@ -14,7 +14,7 @@ const HomePage = React.createClass({
         return <div className="grid-frame">
             <div className="grid-block">
                 <div className="small-2 grid-block vertical">
-                    <Sidebar />
+                    <Sidebar ward={this.state.data.selectedArea}/>
                 </div>
                 <div className="small-10 grid-block">
                     <Mapbox />
