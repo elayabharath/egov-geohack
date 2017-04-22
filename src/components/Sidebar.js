@@ -61,9 +61,9 @@ const Sidebar = React.createClass({
                 <option value="SHIVAJINAGAR">Shivaji Nagar</option>
             </select>
             <hr/>
-            <input id="checkbox1" type="checkbox" /><label htmlFor="checkbox1">High tax</label><br />
-            <input id="checkbox2" type="checkbox" /><label htmlFor="checkbox2">Medium tax</label><br />
-            <input id="checkbox3" type="checkbox" /><label htmlFor="checkbox3">Low tax</label>
+            <p style={{color: "#EF5350"}}>High tax</p>
+            <p style={{color: "#00C853"}}>Low tax</p>
+            <p style={{color: "#FFB300"}}>Medium tax</p>
             <hr/>
             <label>Summary</label>
             <table>
