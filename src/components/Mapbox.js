@@ -60,7 +60,7 @@ const Mapbox = React.createClass({
             container: 'map',
             style: 'mapbox://styles/mapbox/satellite-v9',
             zoom: 15,
-            center: [77.59956, 12.983]
+            center: this.props.ward !== "JAYANAGAR" ? [77.555,12.929752] : [77.5578,12.939273]
         });
 
         map.on('load', function () {
@@ -86,8 +86,8 @@ const Mapbox = React.createClass({
             // console.log("Max tax", maxTax);
             // console.log("Min tax", minTax);
 
-            var taxOneThird = (maxTax - minTax) / 5 + minTax;
-            var taxTwoThird = 2 * (maxTax - minTax) / 5 + minTax;
+            var taxOneThird = (maxTax - minTax) / 8 + minTax;
+            var taxTwoThird = 5 * (maxTax - minTax) / 8 + minTax;
 
             // console.log("One third", taxOneThird);
             // console.log("Two third", taxTwoThird);
