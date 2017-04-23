@@ -57,8 +57,8 @@ const Sidebar = React.createClass({
         return <div className="sidepanel">
             <label>Choose a ward</label>
             <select value={this.props.ward} onChange={this.updateWard} ref="ward">
-                <option value="JAYANAGAR">Ward 1</option>
-                <option value="SHIVAJINAGAR">Ward 2</option>
+                <option value="JAYANAGAR">Ward Banashankari</option>
+                <option value="SHIVAJINAGAR">Ward Padmanabhanagar</option>
             </select>
             <hr/>
             <p style={{color: "#EF5350"}}>High tax</p>

@@ -73,7 +73,7 @@ const Mapbox = React.createClass({
 
             _.forEach(self.state.data, (item, index) => {
                 _.forEach(item, (building, key) => {
-                    data[index][key].tax = building.area * (building.height || 1) * (100 - (building.age || 1) / 100);
+                    data[index][key].tax = building.area * (building.height || 1) * (100 - ((2017-building.year) || 1) / 100);
                     taxes.push(data[index][key].tax)
                 })
             })
@@ -86,8 +86,8 @@ const Mapbox = React.createClass({
             // console.log("Max tax", maxTax);
             // console.log("Min tax", minTax);
 
-            var taxOneThird = (maxTax - minTax) / 8 + minTax;
-            var taxTwoThird = 5 * (maxTax - minTax) / 8 + minTax;
+            var taxOneThird = (maxTax - minTax) / 10 + minTax;
+            var taxTwoThird = 5 * (maxTax - minTax) / 10 + minTax;
 
             // console.log("One third", taxOneThird);
             // console.log("Two third", taxTwoThird);
@@ -108,10 +108,6 @@ const Mapbox = React.createClass({
                                         <tr>
                                             <td style="padding: 0 12px 0 0;">Height (m)</td>
                                             <td><input type="number" value="${building.height || 0}" /></td>
-                                        </tr>
-                                        <tr>
-                                            <td style="padding: 0 12px 0 0;">Age (years)</td>
-                                            <td><input type="number" value="${building.age || 0}" /></td>
                                         </tr>
                                         <tr>
                                             <td style="padding: 0 12px 0 0;">Constructed</td>
