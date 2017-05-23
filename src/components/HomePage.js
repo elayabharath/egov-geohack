@@ -13,10 +13,10 @@ const HomePage = React.createClass({
     render () {
         return <div className="grid-frame">
             <div className="grid-block">
-                <div className="small-2 grid-block vertical">
+                <div className="small-3 grid-block vertical">
                     <Sidebar ward={this.state.data.selectedArea}/>
                 </div>
-                <div className="small-10 grid-block">
+                <div className="small-9 grid-block">
                     <Mapbox ward={this.state.data.selectedArea}/>
                 </div>
             </div>

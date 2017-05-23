@@ -6,6 +6,7 @@ import _ from 'lodash'
 const Mapbox = React.createClass({
 
     getInitialState() {
+        this._toolTip = false;
         return {
             data: jayanagar
         }
@@ -191,44 +192,29 @@ const Mapbox = React.createClass({
             })
 
             var popup = new mapboxgl.Popup({
-               closeButton: false,
+               closeButton: true,
                closeOnClick: false
            });
 
-           map.on('mouseenter', 'buildings-low', function(e) {
+           map.on('click', 'buildings-low', function(e) {
                map.getCanvas().style.cursor = 'pointer';
                popup.setLngLat(e.features[0].geometry.coordinates[0][0])
                    .setHTML(e.features[0].properties.description)
                    .addTo(map);
            });
 
-           map.on('mouseleave', 'buildings-low', function() {
-               map.getCanvas().style.cursor = '';
-               popup.remove();
-           });
-
-           map.on('mouseenter', 'buildings-med', function(e) {
+           map.on('click', 'buildings-med', function(e) {
                map.getCanvas().style.cursor = 'pointer';
                popup.setLngLat(e.features[0].geometry.coordinates[0][0])
                    .setHTML(e.features[0].properties.description)
                    .addTo(map);
            });
 
-           map.on('mouseleave', 'buildings-med', function() {
-               map.getCanvas().style.cursor = '';
-               popup.remove();
-           });
-
-           map.on('mouseenter', 'buildings-high', function(e) {
+           map.on('click', 'buildings-high', function(e) {
                map.getCanvas().style.cursor = 'pointer';
                popup.setLngLat(e.features[0].geometry.coordinates[0][0])
                    .setHTML(e.features[0].properties.description)
                    .addTo(map);
-           });
-
-           map.on('mouseleave', 'buildings-high', function() {
-               map.getCanvas().style.cursor = '';
-               popup.remove();
            });
         });
     },
